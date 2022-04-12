@@ -1,0 +1,817 @@
+[gd_scene load_steps=74 format=2]
+
+[ext_resource path="res://tex/14seg_L.png" type="Texture" id=1]
+[ext_resource path="res://tex/14seg_D.png" type="Texture" id=2]
+[ext_resource path="res://tex/14seg_K.png" type="Texture" id=3]
+[ext_resource path="res://tex/14seg_B.png" type="Texture" id=4]
+[ext_resource path="res://tex/14seg_H.png" type="Texture" id=5]
+[ext_resource path="res://tex/14seg_E.png" type="Texture" id=6]
+[ext_resource path="res://tex/14seg_C.png" type="Texture" id=7]
+[ext_resource path="res://tex/14seg_DP.png" type="Texture" id=8]
+[ext_resource path="res://tex/14seg_G2.png" type="Texture" id=9]
+[ext_resource path="res://tex/14seg_N.png" type="Texture" id=10]
+[ext_resource path="res://tex/14seg_F.png" type="Texture" id=11]
+[ext_resource path="res://tex/14seg_M.png" type="Texture" id=12]
+[ext_resource path="res://tex/14seg_J.png" type="Texture" id=13]
+[ext_resource path="res://tex/14seg_G1.png" type="Texture" id=14]
+[ext_resource path="res://tex/14seg_A.png" type="Texture" id=15]
+[ext_resource path="res://tex/BG.tres" type="Material" id=16]
+[ext_resource path="res://LED.gd" type="Script" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=76]
+
+[sub_resource type="StyleBoxEmpty" id=77]
+
+[sub_resource type="StyleBoxEmpty" id=78]
+
+[sub_resource type="StyleBoxEmpty" id=79]
+
+[sub_resource type="StyleBoxEmpty" id=80]
+
+[sub_resource type="Theme" id=74]
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = SubResource( 76 )
+Button/styles/focus = SubResource( 77 )
+Button/styles/hover = SubResource( 78 )
+Button/styles/normal = SubResource( 79 )
+Button/styles/pressed = SubResource( 80 )
+
+[sub_resource type="VisualShaderNodeVectorOp" id=56]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=2]
+texture = ExtResource( 7 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=3]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id=4]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=5]
+texture = ExtResource( 2 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=6]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=7]
+texture = ExtResource( 15 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTexture" id=8]
+texture = ExtResource( 6 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=9]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=10]
+texture = ExtResource( 11 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=11]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=12]
+texture = ExtResource( 14 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=13]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=14]
+texture = ExtResource( 9 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeColorUniform" id=15]
+output_port_for_preview = 0
+uniform_name = "ColorUniform"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=16]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=17]
+texture = ExtResource( 5 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=18]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=19]
+texture = ExtResource( 13 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=20]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=21]
+texture = ExtResource( 3 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=22]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=23]
+texture = ExtResource( 1 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=24]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=25]
+texture = ExtResource( 12 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=26]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=27]
+texture = ExtResource( 10 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=28]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=29]
+texture = ExtResource( 8 )
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeExpression" id=31]
+size = Vector2( 924, 1177.5 )
+expression = "sum = input0 + input1 + input2 + input3 + input4 + input5 + input6 + input7 + input8 + input9 + input10 + input11 + input12 + input13 + input14;"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=57]
+uniform_name = "A"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=58]
+uniform_name = "B"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=59]
+uniform_name = "C"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=60]
+uniform_name = "D"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=61]
+uniform_name = "E"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=40]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=62]
+uniform_name = "F"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=63]
+uniform_name = "G1"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=64]
+uniform_name = "G2"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=65]
+uniform_name = "H"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=66]
+uniform_name = "J"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=67]
+uniform_name = "L"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=68]
+uniform_name = "K"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=69]
+uniform_name = "M"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=70]
+uniform_name = "N"
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=71]
+uniform_name = "DP"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=48]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id=49]
+texture = ExtResource( 4 )
+texture_type = 1
+
+[sub_resource type="VisualShader" id=50]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform vec4 ColorUniform : hint_color;
+uniform bool A;
+uniform sampler2D tex_frg_2 : hint_albedo;
+uniform bool B;
+uniform sampler2D tex_frg_9 : hint_albedo;
+uniform bool C;
+uniform sampler2D tex_frg_12 : hint_albedo;
+uniform bool D;
+uniform sampler2D tex_frg_17 : hint_albedo;
+uniform bool E;
+uniform sampler2D tex_frg_20 : hint_albedo;
+uniform bool F;
+uniform sampler2D tex_frg_22 : hint_albedo;
+uniform bool G1;
+uniform sampler2D tex_frg_25 : hint_albedo;
+uniform bool G2;
+uniform sampler2D tex_frg_28 : hint_albedo;
+uniform bool H;
+uniform sampler2D tex_frg_31 : hint_albedo;
+uniform bool J;
+uniform sampler2D tex_frg_34 : hint_albedo;
+uniform bool K;
+uniform sampler2D tex_frg_37 : hint_albedo;
+uniform bool L;
+uniform sampler2D tex_frg_40 : hint_albedo;
+uniform bool M;
+uniform sampler2D tex_frg_43 : hint_albedo;
+uniform bool N;
+uniform sampler2D tex_frg_46 : hint_albedo;
+uniform bool DP;
+uniform sampler2D tex_frg_49 : hint_albedo;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// ColorUniform:3
+	vec3 n_out3p0 = ColorUniform.rgb;
+	float n_out3p1 = ColorUniform.a;
+
+// BooleanUniform:52
+	bool n_out52p0 = A;
+
+// Texture:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// VectorOp:8
+	vec3 n_out8p0 = vec3(n_out52p0 ? 1.0 : 0.0) * n_out2p0;
+
+// BooleanUniform:54
+	bool n_out54p0 = B;
+
+// Texture:9
+	vec4 tex_frg_9_read = texture(tex_frg_9, UV.xy);
+	vec3 n_out9p0 = tex_frg_9_read.rgb;
+	float n_out9p1 = tex_frg_9_read.a;
+
+// VectorOp:11
+	vec3 n_out11p0 = vec3(n_out54p0 ? 1.0 : 0.0) * n_out9p0;
+
+// BooleanUniform:56
+	bool n_out56p0 = C;
+
+// Texture:12
+	vec4 tex_frg_12_read = texture(tex_frg_12, UV.xy);
+	vec3 n_out12p0 = tex_frg_12_read.rgb;
+	float n_out12p1 = tex_frg_12_read.a;
+
+// VectorOp:14
+	vec3 n_out14p0 = vec3(n_out56p0 ? 1.0 : 0.0) * n_out12p0;
+
+// BooleanUniform:57
+	bool n_out57p0 = D;
+
+// Texture:17
+	vec4 tex_frg_17_read = texture(tex_frg_17, UV.xy);
+	vec3 n_out17p0 = tex_frg_17_read.rgb;
+	float n_out17p1 = tex_frg_17_read.a;
+
+// VectorOp:15
+	vec3 n_out15p0 = vec3(n_out57p0 ? 1.0 : 0.0) * n_out17p0;
+
+// BooleanUniform:58
+	bool n_out58p0 = E;
+
+// Texture:20
+	vec4 tex_frg_20_read = texture(tex_frg_20, UV.xy);
+	vec3 n_out20p0 = tex_frg_20_read.rgb;
+	float n_out20p1 = tex_frg_20_read.a;
+
+// VectorOp:18
+	vec3 n_out18p0 = vec3(n_out58p0 ? 1.0 : 0.0) * n_out20p0;
+
+// BooleanUniform:60
+	bool n_out60p0 = F;
+
+// Texture:22
+	vec4 tex_frg_22_read = texture(tex_frg_22, UV.xy);
+	vec3 n_out22p0 = tex_frg_22_read.rgb;
+	float n_out22p1 = tex_frg_22_read.a;
+
+// VectorOp:21
+	vec3 n_out21p0 = vec3(n_out60p0 ? 1.0 : 0.0) * n_out22p0;
+
+// BooleanUniform:61
+	bool n_out61p0 = G1;
+
+// Texture:25
+	vec4 tex_frg_25_read = texture(tex_frg_25, UV.xy);
+	vec3 n_out25p0 = tex_frg_25_read.rgb;
+	float n_out25p1 = tex_frg_25_read.a;
+
+// VectorOp:24
+	vec3 n_out24p0 = vec3(n_out61p0 ? 1.0 : 0.0) * n_out25p0;
+
+// BooleanUniform:62
+	bool n_out62p0 = G2;
+
+// Texture:28
+	vec4 tex_frg_28_read = texture(tex_frg_28, UV.xy);
+	vec3 n_out28p0 = tex_frg_28_read.rgb;
+	float n_out28p1 = tex_frg_28_read.a;
+
+// VectorOp:27
+	vec3 n_out27p0 = vec3(n_out62p0 ? 1.0 : 0.0) * n_out28p0;
+
+// BooleanUniform:64
+	bool n_out64p0 = H;
+
+// Texture:31
+	vec4 tex_frg_31_read = texture(tex_frg_31, UV.xy);
+	vec3 n_out31p0 = tex_frg_31_read.rgb;
+	float n_out31p1 = tex_frg_31_read.a;
+
+// VectorOp:30
+	vec3 n_out30p0 = vec3(n_out64p0 ? 1.0 : 0.0) * n_out31p0;
+
+// BooleanUniform:65
+	bool n_out65p0 = J;
+
+// Texture:34
+	vec4 tex_frg_34_read = texture(tex_frg_34, UV.xy);
+	vec3 n_out34p0 = tex_frg_34_read.rgb;
+	float n_out34p1 = tex_frg_34_read.a;
+
+// VectorOp:33
+	vec3 n_out33p0 = vec3(n_out65p0 ? 1.0 : 0.0) * n_out34p0;
+
+// BooleanUniform:67
+	bool n_out67p0 = K;
+
+// Texture:37
+	vec4 tex_frg_37_read = texture(tex_frg_37, UV.xy);
+	vec3 n_out37p0 = tex_frg_37_read.rgb;
+	float n_out37p1 = tex_frg_37_read.a;
+
+// VectorOp:36
+	vec3 n_out36p0 = vec3(n_out67p0 ? 1.0 : 0.0) * n_out37p0;
+
+// BooleanUniform:66
+	bool n_out66p0 = L;
+
+// Texture:40
+	vec4 tex_frg_40_read = texture(tex_frg_40, UV.xy);
+	vec3 n_out40p0 = tex_frg_40_read.rgb;
+	float n_out40p1 = tex_frg_40_read.a;
+
+// VectorOp:39
+	vec3 n_out39p0 = vec3(n_out66p0 ? 1.0 : 0.0) * n_out40p0;
+
+// BooleanUniform:68
+	bool n_out68p0 = M;
+
+// Texture:43
+	vec4 tex_frg_43_read = texture(tex_frg_43, UV.xy);
+	vec3 n_out43p0 = tex_frg_43_read.rgb;
+	float n_out43p1 = tex_frg_43_read.a;
+
+// VectorOp:42
+	vec3 n_out42p0 = vec3(n_out68p0 ? 1.0 : 0.0) * n_out43p0;
+
+// BooleanUniform:69
+	bool n_out69p0 = N;
+
+// Texture:46
+	vec4 tex_frg_46_read = texture(tex_frg_46, UV.xy);
+	vec3 n_out46p0 = tex_frg_46_read.rgb;
+	float n_out46p1 = tex_frg_46_read.a;
+
+// VectorOp:45
+	vec3 n_out45p0 = vec3(n_out69p0 ? 1.0 : 0.0) * n_out46p0;
+
+// BooleanUniform:70
+	bool n_out70p0 = DP;
+
+// Texture:49
+	vec4 tex_frg_49_read = texture(tex_frg_49, UV.xy);
+	vec3 n_out49p0 = tex_frg_49_read.rgb;
+	float n_out49p1 = tex_frg_49_read.a;
+
+// VectorOp:48
+	vec3 n_out48p0 = vec3(n_out70p0 ? 1.0 : 0.0) * n_out49p0;
+
+// Expression:51
+	vec3 n_out51p0;
+	n_out51p0 = vec3(0.0, 0.0, 0.0);
+	{
+		n_out51p0 = n_out8p0 + n_out11p0 + n_out14p0 + n_out15p0 + n_out18p0 + n_out21p0 + n_out24p0 + n_out27p0 + n_out30p0 + n_out33p0 + n_out36p0 + n_out39p0 + n_out42p0 + n_out45p0 + n_out48p0;
+	}
+
+// VectorOp:6
+	vec3 n_out6p0 = n_out3p0 * n_out51p0;
+
+// Output:0
+	COLOR.rgb = n_out6p0;
+	COLOR.a = dot(n_out51p0, vec3(0.333333, 0.333333, 0.333333));
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( 329.333, -120 )
+mode = 1
+flags/light_only = false
+flags/unshaded = true
+nodes/fragment/0/position = Vector2( 2320, -60 )
+nodes/fragment/2/node = SubResource( 7 )
+nodes/fragment/2/position = Vector2( 1020, 340 )
+nodes/fragment/3/node = SubResource( 15 )
+nodes/fragment/3/position = Vector2( 1340, -180 )
+nodes/fragment/6/node = SubResource( 40 )
+nodes/fragment/6/position = Vector2( 1940, -80 )
+nodes/fragment/8/node = SubResource( 48 )
+nodes/fragment/8/position = Vector2( 1340, 340 )
+nodes/fragment/9/node = SubResource( 49 )
+nodes/fragment/9/position = Vector2( 1020, 700 )
+nodes/fragment/11/node = SubResource( 56 )
+nodes/fragment/11/position = Vector2( 1340, 700 )
+nodes/fragment/12/node = SubResource( 2 )
+nodes/fragment/12/position = Vector2( 1020, 1060 )
+nodes/fragment/14/node = SubResource( 3 )
+nodes/fragment/14/position = Vector2( 1340, 1060 )
+nodes/fragment/15/node = SubResource( 4 )
+nodes/fragment/15/position = Vector2( 1340, 1420 )
+nodes/fragment/17/node = SubResource( 5 )
+nodes/fragment/17/position = Vector2( 1020, 1420 )
+nodes/fragment/18/node = SubResource( 6 )
+nodes/fragment/18/position = Vector2( 1340, 1780 )
+nodes/fragment/20/node = SubResource( 8 )
+nodes/fragment/20/position = Vector2( 1020, 1780 )
+nodes/fragment/21/node = SubResource( 9 )
+nodes/fragment/21/position = Vector2( 1340, 2140 )
+nodes/fragment/22/node = SubResource( 10 )
+nodes/fragment/22/position = Vector2( 1020, 2140 )
+nodes/fragment/24/node = SubResource( 11 )
+nodes/fragment/24/position = Vector2( 1340, 2500 )
+nodes/fragment/25/node = SubResource( 12 )
+nodes/fragment/25/position = Vector2( 1020, 2500 )
+nodes/fragment/27/node = SubResource( 13 )
+nodes/fragment/27/position = Vector2( 1340, 2860 )
+nodes/fragment/28/node = SubResource( 14 )
+nodes/fragment/28/position = Vector2( 1020, 2860 )
+nodes/fragment/30/node = SubResource( 16 )
+nodes/fragment/30/position = Vector2( 1340, 3220 )
+nodes/fragment/31/node = SubResource( 17 )
+nodes/fragment/31/position = Vector2( 1020, 3220 )
+nodes/fragment/33/node = SubResource( 18 )
+nodes/fragment/33/position = Vector2( 1340, 3580 )
+nodes/fragment/34/node = SubResource( 19 )
+nodes/fragment/34/position = Vector2( 1020, 3580 )
+nodes/fragment/36/node = SubResource( 20 )
+nodes/fragment/36/position = Vector2( 1340, 3940 )
+nodes/fragment/37/node = SubResource( 21 )
+nodes/fragment/37/position = Vector2( 1020, 3940 )
+nodes/fragment/39/node = SubResource( 22 )
+nodes/fragment/39/position = Vector2( 1340, 4300 )
+nodes/fragment/40/node = SubResource( 23 )
+nodes/fragment/40/position = Vector2( 1020, 4300 )
+nodes/fragment/42/node = SubResource( 24 )
+nodes/fragment/42/position = Vector2( 1340, 4660 )
+nodes/fragment/43/node = SubResource( 25 )
+nodes/fragment/43/position = Vector2( 1020, 4660 )
+nodes/fragment/45/node = SubResource( 26 )
+nodes/fragment/45/position = Vector2( 1340, 5020 )
+nodes/fragment/46/node = SubResource( 27 )
+nodes/fragment/46/position = Vector2( 1020, 5020 )
+nodes/fragment/48/node = SubResource( 28 )
+nodes/fragment/48/position = Vector2( 1340, 5380 )
+nodes/fragment/49/node = SubResource( 29 )
+nodes/fragment/49/position = Vector2( 1020, 5380 )
+nodes/fragment/51/node = SubResource( 31 )
+nodes/fragment/51/position = Vector2( 1740, 720 )
+nodes/fragment/51/size = Vector2( 924, 1177.5 )
+nodes/fragment/51/input_ports = "0,1,input0;1,1,input1;2,1,input2;3,1,input3;4,1,input4;5,1,input5;6,1,input6;7,1,input7;8,1,input8;9,1,input9;10,1,input10;11,1,input11;12,1,input12;13,1,input13;14,1,input14;"
+nodes/fragment/51/output_ports = "0,1,sum;"
+nodes/fragment/51/expression = "sum = input0 + input1 + input2 + input3 + input4 + input5 + input6 + input7 + input8 + input9 + input10 + input11 + input12 + input13 + input14;"
+nodes/fragment/52/node = SubResource( 57 )
+nodes/fragment/52/position = Vector2( 720, 340 )
+nodes/fragment/54/node = SubResource( 58 )
+nodes/fragment/54/position = Vector2( 720, 700 )
+nodes/fragment/56/node = SubResource( 59 )
+nodes/fragment/56/position = Vector2( 720, 1060 )
+nodes/fragment/57/node = SubResource( 60 )
+nodes/fragment/57/position = Vector2( 720, 1420 )
+nodes/fragment/58/node = SubResource( 61 )
+nodes/fragment/58/position = Vector2( 720, 1780 )
+nodes/fragment/60/node = SubResource( 62 )
+nodes/fragment/60/position = Vector2( 720, 2140 )
+nodes/fragment/61/node = SubResource( 63 )
+nodes/fragment/61/position = Vector2( 720, 2500 )
+nodes/fragment/62/node = SubResource( 64 )
+nodes/fragment/62/position = Vector2( 720, 2860 )
+nodes/fragment/64/node = SubResource( 65 )
+nodes/fragment/64/position = Vector2( 720, 3220 )
+nodes/fragment/65/node = SubResource( 66 )
+nodes/fragment/65/position = Vector2( 720, 3580 )
+nodes/fragment/66/node = SubResource( 67 )
+nodes/fragment/66/position = Vector2( 720, 4300 )
+nodes/fragment/67/node = SubResource( 68 )
+nodes/fragment/67/position = Vector2( 720, 3940 )
+nodes/fragment/68/node = SubResource( 69 )
+nodes/fragment/68/position = Vector2( 720, 4660 )
+nodes/fragment/69/node = SubResource( 70 )
+nodes/fragment/69/position = Vector2( 720, 5020 )
+nodes/fragment/70/node = SubResource( 71 )
+nodes/fragment/70/position = Vector2( 720, 5380 )
+nodes/fragment/connections = PoolIntArray( 6, 0, 0, 0, 3, 0, 6, 0, 2, 0, 8, 1, 9, 0, 11, 1, 12, 0, 14, 1, 17, 0, 15, 1, 20, 0, 18, 1, 22, 0, 21, 1, 25, 0, 24, 1, 28, 0, 27, 1, 31, 0, 30, 1, 34, 0, 33, 1, 37, 0, 36, 1, 40, 0, 39, 1, 43, 0, 42, 1, 46, 0, 45, 1, 49, 0, 48, 1, 8, 0, 51, 0, 11, 0, 51, 1, 14, 0, 51, 2, 15, 0, 51, 3, 18, 0, 51, 4, 21, 0, 51, 5, 24, 0, 51, 6, 27, 0, 51, 7, 30, 0, 51, 8, 33, 0, 51, 9, 36, 0, 51, 10, 39, 0, 51, 11, 42, 0, 51, 12, 45, 0, 51, 13, 48, 0, 51, 14, 51, 0, 6, 1, 51, 0, 0, 1, 52, 0, 8, 0, 70, 0, 48, 0, 69, 0, 45, 0, 68, 0, 42, 0, 66, 0, 39, 0, 67, 0, 36, 0, 65, 0, 33, 0, 64, 0, 30, 0, 62, 0, 27, 0, 61, 0, 24, 0, 60, 0, 21, 0, 58, 0, 18, 0, 57, 0, 15, 0, 54, 0, 11, 0, 56, 0, 14, 0 )
+
+[sub_resource type="ShaderMaterial" id=75]
+resource_local_to_scene = true
+shader = SubResource( 50 )
+shader_param/ColorUniform = Color( 1, 0, 0, 1 )
+shader_param/A = false
+shader_param/B = false
+shader_param/C = false
+shader_param/D = false
+shader_param/E = false
+shader_param/F = false
+shader_param/G1 = false
+shader_param/G2 = false
+shader_param/H = false
+shader_param/J = false
+shader_param/K = false
+shader_param/L = false
+shader_param/M = false
+shader_param/N = false
+shader_param/DP = false
+
+[node name="LED1" type="Panel"]
+material = ExtResource( 16 )
+margin_left = 24.0
+margin_right = 158.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 134, 182 )
+mouse_filter = 2
+theme = SubResource( 74 )
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="segments" type="Panel" parent="."]
+material = SubResource( 75 )
+margin_right = 134.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 134, 182 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+margin_right = 134.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 0, 19 )
+
+[node name="Control2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 19.0
+margin_right = 134.0
+margin_bottom = 33.0
+mouse_filter = 2
+
+[node name="Control3" type="Control" parent="VBoxContainer/Control2"]
+margin_right = 49.057
+margin_bottom = 14.0
+rect_min_size = Vector2( 49.057, 0 )
+
+[node name="A" type="Button" parent="VBoxContainer/Control2"]
+margin_left = 53.0
+margin_right = 118.255
+margin_bottom = 14.0
+rect_min_size = Vector2( 65.255, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 33.0
+margin_right = 134.0
+margin_bottom = 78.0
+mouse_filter = 2
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_right = 32.065
+margin_bottom = 45.866
+rect_min_size = Vector2( 32.065, 45.866 )
+
+[node name="F" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 32.0
+margin_right = 51.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 19, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="H" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 51.0
+margin_right = 70.156
+margin_bottom = 45.0
+rect_min_size = Vector2( 19.156, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="J" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 70.0
+margin_right = 87.766
+margin_bottom = 45.0
+rect_min_size = Vector2( 17.766, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="K" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 87.0
+margin_right = 107.758
+margin_bottom = 45.0
+rect_min_size = Vector2( 20.758, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="B" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 107.0
+margin_right = 128.04
+margin_bottom = 45.0
+rect_min_size = Vector2( 21.04, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 78.0
+margin_right = 134.0
+margin_bottom = 99.0
+mouse_filter = 2
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 38.874
+margin_bottom = 21.485
+rect_min_size = Vector2( 38.874, 21.485 )
+
+[node name="G1" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 38.0
+margin_right = 74.064
+margin_bottom = 21.0
+rect_min_size = Vector2( 36.064, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="G2" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 74.0
+margin_right = 107.133
+margin_bottom = 21.0
+rect_min_size = Vector2( 33.133, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 99.0
+margin_right = 134.0
+margin_bottom = 146.0
+mouse_filter = 2
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer3"]
+margin_right = 21.187
+margin_bottom = 47.692
+rect_min_size = Vector2( 21.187, 47.692 )
+
+[node name="E" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 21.0
+margin_right = 40.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 19, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="L" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 40.0
+margin_right = 59.156
+margin_bottom = 47.0
+rect_min_size = Vector2( 19.156, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="M" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 59.0
+margin_right = 76.766
+margin_bottom = 47.0
+rect_min_size = Vector2( 17.766, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="N" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 76.0
+margin_right = 96.758
+margin_bottom = 47.0
+rect_min_size = Vector2( 20.758, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="C" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 96.0
+margin_right = 117.04
+margin_bottom = 47.0
+rect_min_size = Vector2( 21.04, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="Control3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 146.0
+margin_right = 134.0
+margin_bottom = 163.0
+mouse_filter = 2
+
+[node name="Control3" type="Control" parent="VBoxContainer/Control3"]
+margin_right = 25.78
+margin_bottom = 17.575
+rect_min_size = Vector2( 25.78, 17.575 )
+
+[node name="D" type="Button" parent="VBoxContainer/Control3"]
+margin_left = 29.0
+margin_right = 94.255
+margin_bottom = 17.0
+rect_min_size = Vector2( 65.255, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[node name="Control4" type="Control" parent="VBoxContainer/Control3"]
+margin_left = 98.0
+margin_right = 107.365
+margin_bottom = 17.0
+rect_min_size = Vector2( 9.365, 0 )
+
+[node name="DP" type="Button" parent="VBoxContainer/Control3"]
+margin_left = 111.0
+margin_right = 128.555
+margin_bottom = 17.0
+rect_min_size = Vector2( 17.555, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+
+[connection signal="toggled" from="VBoxContainer/Control2/A" to="." method="_on_A_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/F" to="." method="_on_F_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/H" to="." method="_on_H_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/J" to="." method="_on_J_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/K" to="." method="_on_K_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/B" to="." method="_on_B_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer2/G1" to="." method="_on_G1_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer2/G2" to="." method="_on_G2_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer3/E" to="." method="_on_E_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer3/L" to="." method="_on_L_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer3/M" to="." method="_on_M_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer3/N" to="." method="_on_N_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer3/C" to="." method="_on_C_toggled"]
+[connection signal="toggled" from="VBoxContainer/Control3/D" to="." method="_on_D_toggled"]
+[connection signal="toggled" from="VBoxContainer/Control3/DP" to="." method="_on_DP_toggled"]
