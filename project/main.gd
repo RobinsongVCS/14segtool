@@ -1,4 +1,3 @@
-tool
 extends Control
 
 var bg_color
@@ -9,7 +8,7 @@ onready var alert_container = $alert_container
 onready var bg_dialog = $alert_container/bg_dialog
 onready var off_dialog = $alert_container/off_dialog
 onready var on_dialog = $alert_container/on_dialog
-onready var bg_panel = $Panel/CenterContainer/Panel/bg_panel
+
 
 onready var bg_button = $Panel/CenterContainer/VBoxContainer/HBoxContainer/select_bg
 var bg_button_style = StyleBoxFlat.new()
@@ -27,11 +26,9 @@ onready var led3 = $Panel/CenterContainer/VBoxContainer/LED_container/LED3
 onready var led4 = $Panel/CenterContainer/VBoxContainer/LED_container/LED4
 onready var leds = [led1,led2,led3,led4]
 
-onready var camera = $Camera2D
 
 func _ready():
 	OS.center_window()
-# warning-ignore:return_value_discarded
 	get_tree().root.connect("size_changed", self, "_on_viewport_size_changed")
 	
 	bg_button_style.corner_radius_bottom_left = 2
@@ -57,8 +54,6 @@ func _ready():
 	on_button_style.bg_color = on_color
 	update_colors()
 	
-	bg_panel.add_stylebox_override("panel", bg_panel_style)
-	
 	bg_button.add_stylebox_override("normal", bg_button_style)
 	off_button.add_stylebox_override("normal", off_button_style)
 	on_button.add_stylebox_override("normal", on_button_style)
@@ -69,9 +64,10 @@ func _ready():
 
 
 func _on_select_bg_pressed():
-
 	alert_container.visible = true
 	bg_dialog.visible = true
+	bg_dialog.rect_position = OS.window_size/2-bg_dialog.rect_size/4
+	bg_dialog.rect_scale = Vector2(.5,.5)
 	
 func _on_bg_color_changed(color):
 	bg_color = color
@@ -79,7 +75,6 @@ func _on_bg_color_changed(color):
 	bg_panel_style.bg_color = bg_color
 	bg_button.add_stylebox_override("normal", bg_button_style)
 	bg_button.add_stylebox_override("hover", bg_button_style)
-	bg_panel.add_stylebox_override("panel", bg_panel_style)
 	update_colors()
 	
 func _on_bg_dialog_confirmed():
@@ -88,6 +83,8 @@ func _on_bg_dialog_confirmed():
 func _on_select_off_pressed():
 	alert_container.visible = true
 	off_dialog.visible = true
+	off_dialog.rect_position = OS.window_size/2-off_dialog.rect_size/4
+	off_dialog.rect_scale = Vector2(.5,.5)
 
 func _on_off_color_changed(color):
 	off_color = color
@@ -102,6 +99,8 @@ func _on_off_dialog_confirmed():
 func _on_select_on_pressed():
 	alert_container.visible = true
 	on_dialog.visible = true
+	on_dialog.rect_position = OS.window_size/2-on_dialog.rect_size/4
+	on_dialog.rect_scale = Vector2(.5,.5)
 
 func _on_on_color_changed(color):
 	on_color = color
@@ -121,5 +120,6 @@ func update_colors():
 		led.update_colors()
 		
 func _on_viewport_size_changed():
-	rect_size = OS.window_size
-	camera.offset = rect_size/2
+#	rect_size = OS.window_size
+#	rect_position = Vector2.ZERO
+	pass

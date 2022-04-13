@@ -427,7 +427,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( 329.333, -120 )
+graph_offset = Vector2( 440, -199 )
 mode = 1
 flags/light_only = false
 flags/unshaded = true

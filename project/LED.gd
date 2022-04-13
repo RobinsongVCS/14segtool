@@ -1,4 +1,3 @@
-tool
 extends Control
 
 onready var material_led = preload("res://tex/segments.tres")
@@ -13,7 +12,7 @@ signal updated(bitmask)
 
 func _ready():
 	material_led = material_led.duplicate()
-	$segments.material = material_led
+	$MarginContainer/segments.material = material_led
 
 
 func _on_A_toggled(button_pressed):

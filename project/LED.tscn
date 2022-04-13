@@ -24,7 +24,7 @@
 
 [sub_resource type="StyleBoxEmpty" id=78]
 
-[sub_resource type="StyleBoxEmpty" id=79]
+[sub_resource type="StyleBoxEmpty" id=82]
 
 [sub_resource type="StyleBoxEmpty" id=80]
 
@@ -39,7 +39,7 @@ Button/fonts/font = null
 Button/styles/disabled = SubResource( 76 )
 Button/styles/focus = SubResource( 77 )
 Button/styles/hover = SubResource( 78 )
-Button/styles/normal = SubResource( 79 )
+Button/styles/normal = SubResource( 82 )
 Button/styles/pressed = SubResource( 80 )
 
 [sub_resource type="VisualShaderNodeVectorOp" id=56]
@@ -453,7 +453,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( 329.333, -120 )
+graph_offset = Vector2( 440, -199 )
 mode = 1
 flags/light_only = false
 flags/unshaded = true
@@ -560,32 +560,31 @@ nodes/fragment/70/node = SubResource( 71 )
 nodes/fragment/70/position = Vector2( 720, 5380 )
 nodes/fragment/connections = PoolIntArray( 6, 0, 0, 0, 3, 0, 6, 0, 2, 0, 8, 1, 9, 0, 11, 1, 12, 0, 14, 1, 17, 0, 15, 1, 20, 0, 18, 1, 22, 0, 21, 1, 25, 0, 24, 1, 28, 0, 27, 1, 31, 0, 30, 1, 34, 0, 33, 1, 37, 0, 36, 1, 40, 0, 39, 1, 43, 0, 42, 1, 46, 0, 45, 1, 49, 0, 48, 1, 8, 0, 51, 0, 11, 0, 51, 1, 14, 0, 51, 2, 15, 0, 51, 3, 18, 0, 51, 4, 21, 0, 51, 5, 24, 0, 51, 6, 27, 0, 51, 7, 30, 0, 51, 8, 33, 0, 51, 9, 36, 0, 51, 10, 39, 0, 51, 11, 42, 0, 51, 12, 45, 0, 51, 13, 48, 0, 51, 14, 51, 0, 6, 1, 51, 0, 0, 1, 52, 0, 8, 0, 70, 0, 48, 0, 69, 0, 45, 0, 68, 0, 42, 0, 66, 0, 39, 0, 67, 0, 36, 0, 65, 0, 33, 0, 64, 0, 30, 0, 62, 0, 27, 0, 61, 0, 24, 0, 60, 0, 21, 0, 58, 0, 18, 0, 57, 0, 15, 0, 54, 0, 11, 0, 56, 0, 14, 0 )
 
-[sub_resource type="ShaderMaterial" id=75]
+[sub_resource type="ShaderMaterial" id=81]
 resource_local_to_scene = true
 shader = SubResource( 50 )
 shader_param/ColorUniform = Color( 1, 0, 0, 1 )
-shader_param/A = false
-shader_param/B = false
-shader_param/C = false
-shader_param/D = false
-shader_param/E = false
-shader_param/F = false
-shader_param/G1 = false
-shader_param/G2 = false
-shader_param/H = false
-shader_param/J = false
-shader_param/K = false
-shader_param/L = false
-shader_param/M = false
-shader_param/N = false
-shader_param/DP = false
+shader_param/A = true
+shader_param/B = true
+shader_param/C = true
+shader_param/D = true
+shader_param/E = true
+shader_param/F = true
+shader_param/G1 = true
+shader_param/G2 = true
+shader_param/H = true
+shader_param/J = true
+shader_param/K = true
+shader_param/L = true
+shader_param/M = true
+shader_param/N = true
+shader_param/DP = true
 
 [node name="LED1" type="Panel"]
 material = ExtResource( 16 )
-margin_left = 24.0
-margin_right = 158.0
+margin_right = 132.0
 margin_bottom = 182.0
-rect_min_size = Vector2( 134, 182 )
+rect_min_size = Vector2( 132, 182 )
 mouse_filter = 2
 theme = SubResource( 74 )
 script = ExtResource( 17 )
@@ -593,225 +592,368 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="segments" type="Panel" parent="."]
-material = SubResource( 75 )
-margin_right = 134.0
-margin_bottom = 182.0
-rect_min_size = Vector2( 134, 182 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="segments" type="Panel" parent="MarginContainer"]
+material = SubResource( 81 )
+margin_right = 132.0
+margin_bottom = 182.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 132.0
+margin_bottom = 182.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 132.0
+margin_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="VBoxContainer"]
-margin_right = 134.0
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 132.0
 margin_bottom = 19.0
-rect_min_size = Vector2( 0, 19 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.19
 
-[node name="Control2" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Control2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 19.0
-margin_right = 134.0
+margin_right = 132.0
 margin_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Control3" type="Control" parent="VBoxContainer/Control2"]
-margin_right = 49.057
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Control2"]
+margin_right = 47.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 49.057, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.52
 
-[node name="A" type="Button" parent="VBoxContainer/Control2"]
-margin_left = 53.0
-margin_right = 118.255
+[node name="A" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Control2"]
+margin_left = 51.0
+margin_right = 119.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 65.255, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.64
+custom_constants/hseparation = 0
 toggle_mode = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Control2"]
+margin_left = 123.0
+margin_right = 132.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.47
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 33.0
-margin_right = 134.0
-margin_bottom = 78.0
+margin_right = 132.0
+margin_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.62
 custom_constants/separation = 0
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
-margin_right = 32.065
-margin_bottom = 45.866
-rect_min_size = Vector2( 32.065, 45.866 )
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 30.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.67
 
-[node name="F" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 32.0
-margin_right = 51.0
-margin_bottom = 45.0
+[node name="F" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 30.0
+margin_right = 49.0
+margin_bottom = 49.0
 rect_min_size = Vector2( 19, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="H" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 51.0
-margin_right = 70.156
-margin_bottom = 45.0
+[node name="H" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 49.0
+margin_right = 68.156
+margin_bottom = 49.0
 rect_min_size = Vector2( 19.156, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="J" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 70.0
-margin_right = 87.766
-margin_bottom = 45.0
+[node name="J" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 68.0
+margin_right = 85.766
+margin_bottom = 49.0
 rect_min_size = Vector2( 17.766, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="K" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 87.0
-margin_right = 107.758
-margin_bottom = 45.0
+[node name="K" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 85.0
+margin_right = 105.758
+margin_bottom = 49.0
 rect_min_size = Vector2( 20.758, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="B" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 107.0
-margin_right = 128.04
-margin_bottom = 45.0
+[node name="B" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 105.0
+margin_right = 126.04
+margin_bottom = 49.0
 rect_min_size = Vector2( 21.04, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 78.0
-margin_right = 134.0
-margin_bottom = 99.0
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 126.0
+margin_right = 132.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.28
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 82.0
+margin_right = 132.0
+margin_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.86
 custom_constants/separation = 0
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
-margin_right = 38.874
-margin_bottom = 21.485
-rect_min_size = Vector2( 38.874, 21.485 )
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 37.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.54
 
-[node name="G1" type="Button" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 38.0
-margin_right = 74.064
-margin_bottom = 21.0
+[node name="G1" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 37.0
+margin_right = 73.064
+margin_bottom = 16.0
 rect_min_size = Vector2( 36.064, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.33
 toggle_mode = true
 
-[node name="G2" type="Button" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 74.0
-margin_right = 107.133
-margin_bottom = 21.0
+[node name="G2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 73.0
+margin_right = 106.133
+margin_bottom = 16.0
 rect_min_size = Vector2( 33.133, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.33
 toggle_mode = true
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 99.0
-margin_right = 134.0
-margin_bottom = 146.0
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 106.0
+margin_right = 132.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.08
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 98.0
+margin_right = 132.0
+margin_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.62
 custom_constants/separation = 0
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer3"]
-margin_right = 21.187
-margin_bottom = 47.692
-rect_min_size = Vector2( 21.187, 47.692 )
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 17.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.94
 
-[node name="E" type="Button" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 21.0
-margin_right = 40.0
-margin_bottom = 47.0
+[node name="E" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 17.0
+margin_right = 36.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 19, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="L" type="Button" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 40.0
-margin_right = 59.156
-margin_bottom = 47.0
+[node name="L" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 36.0
+margin_right = 55.156
+margin_bottom = 50.0
 rect_min_size = Vector2( 19.156, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="M" type="Button" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 59.0
-margin_right = 76.766
-margin_bottom = 47.0
+[node name="M" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 55.0
+margin_right = 74.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 17.766, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="N" type="Button" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 76.0
-margin_right = 96.758
-margin_bottom = 47.0
+[node name="N" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 74.0
+margin_right = 94.758
+margin_bottom = 50.0
 rect_min_size = Vector2( 20.758, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="C" type="Button" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 96.0
-margin_right = 117.04
-margin_bottom = 47.0
+[node name="C" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 94.0
+margin_right = 115.04
+margin_bottom = 50.0
 rect_min_size = Vector2( 21.04, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 
-[node name="Control3" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 146.0
-margin_right = 134.0
-margin_bottom = 163.0
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 115.0
+margin_right = 132.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.88
+
+[node name="Control3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 148.0
+margin_right = 132.0
+margin_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.86
 
-[node name="Control3" type="Control" parent="VBoxContainer/Control3"]
-margin_right = 25.78
-margin_bottom = 17.575
-rect_min_size = Vector2( 25.78, 17.575 )
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Control3"]
+margin_right = 26.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.51
 
-[node name="D" type="Button" parent="VBoxContainer/Control3"]
-margin_left = 29.0
-margin_right = 94.255
-margin_bottom = 17.0
+[node name="D" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Control3"]
+margin_left = 30.0
+margin_right = 99.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 65.255, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.92
 toggle_mode = true
 
-[node name="Control4" type="Control" parent="VBoxContainer/Control3"]
-margin_left = 98.0
-margin_right = 107.365
-margin_bottom = 17.0
-rect_min_size = Vector2( 9.365, 0 )
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Control3"]
+margin_left = 103.0
+margin_right = 107.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.46
 
-[node name="DP" type="Button" parent="VBoxContainer/Control3"]
+[node name="DP" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Control3"]
 margin_left = 111.0
 margin_right = 128.555
-margin_bottom = 17.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 17.555, 0 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.19
 toggle_mode = true
 
-[connection signal="toggled" from="VBoxContainer/Control2/A" to="." method="_on_A_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer/F" to="." method="_on_F_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer/H" to="." method="_on_H_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer/J" to="." method="_on_J_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer/K" to="." method="_on_K_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer/B" to="." method="_on_B_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer2/G1" to="." method="_on_G1_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer2/G2" to="." method="_on_G2_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer3/E" to="." method="_on_E_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer3/L" to="." method="_on_L_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer3/M" to="." method="_on_M_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer3/N" to="." method="_on_N_toggled"]
-[connection signal="toggled" from="VBoxContainer/HBoxContainer3/C" to="." method="_on_C_toggled"]
-[connection signal="toggled" from="VBoxContainer/Control3/D" to="." method="_on_D_toggled"]
-[connection signal="toggled" from="VBoxContainer/Control3/DP" to="." method="_on_DP_toggled"]
+[node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Control3"]
+margin_left = 132.0
+margin_right = 132.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 164.0
+margin_right = 132.0
+margin_bottom = 182.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/Control2/A" to="." method="_on_A_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/F" to="." method="_on_F_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/H" to="." method="_on_H_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/J" to="." method="_on_J_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/K" to="." method="_on_K_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/B" to="." method="_on_B_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/G1" to="." method="_on_G1_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/G2" to="." method="_on_G2_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/E" to="." method="_on_E_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/L" to="." method="_on_L_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/M" to="." method="_on_M_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/N" to="." method="_on_N_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/C" to="." method="_on_C_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/Control3/D" to="." method="_on_D_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/Control3/DP" to="." method="_on_DP_toggled"]
