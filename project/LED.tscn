@@ -100,7 +100,7 @@ texture_type = 1
 
 [sub_resource type="VisualShaderNodeColorUniform" id=15]
 output_port_for_preview = 0
-uniform_name = "ColorUniform"
+uniform_name = "on"
 
 [sub_resource type="VisualShaderNodeVectorOp" id=16]
 output_port_for_preview = 0
@@ -223,7 +223,7 @@ texture_type = 1
 code = "shader_type canvas_item;
 render_mode unshaded;
 
-uniform vec4 ColorUniform : hint_color;
+uniform vec4 on : hint_color;
 uniform bool A;
 uniform sampler2D tex_frg_2 : hint_albedo;
 uniform bool B;
@@ -264,8 +264,8 @@ void vertex() {
 
 void fragment() {
 // ColorUniform:3
-	vec3 n_out3p0 = ColorUniform.rgb;
-	float n_out3p1 = ColorUniform.a;
+	vec3 n_out3p0 = on.rgb;
+	float n_out3p1 = on.a;
 
 // BooleanUniform:52
 	bool n_out52p0 = A;
@@ -453,7 +453,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( 440, -199 )
+graph_offset = Vector2( 291.333, -122.333 )
 mode = 1
 flags/light_only = false
 flags/unshaded = true
@@ -558,27 +558,27 @@ nodes/fragment/69/node = SubResource( 70 )
 nodes/fragment/69/position = Vector2( 720, 5020 )
 nodes/fragment/70/node = SubResource( 71 )
 nodes/fragment/70/position = Vector2( 720, 5380 )
-nodes/fragment/connections = PoolIntArray( 6, 0, 0, 0, 3, 0, 6, 0, 2, 0, 8, 1, 9, 0, 11, 1, 12, 0, 14, 1, 17, 0, 15, 1, 20, 0, 18, 1, 22, 0, 21, 1, 25, 0, 24, 1, 28, 0, 27, 1, 31, 0, 30, 1, 34, 0, 33, 1, 37, 0, 36, 1, 40, 0, 39, 1, 43, 0, 42, 1, 46, 0, 45, 1, 49, 0, 48, 1, 8, 0, 51, 0, 11, 0, 51, 1, 14, 0, 51, 2, 15, 0, 51, 3, 18, 0, 51, 4, 21, 0, 51, 5, 24, 0, 51, 6, 27, 0, 51, 7, 30, 0, 51, 8, 33, 0, 51, 9, 36, 0, 51, 10, 39, 0, 51, 11, 42, 0, 51, 12, 45, 0, 51, 13, 48, 0, 51, 14, 51, 0, 6, 1, 51, 0, 0, 1, 52, 0, 8, 0, 70, 0, 48, 0, 69, 0, 45, 0, 68, 0, 42, 0, 66, 0, 39, 0, 67, 0, 36, 0, 65, 0, 33, 0, 64, 0, 30, 0, 62, 0, 27, 0, 61, 0, 24, 0, 60, 0, 21, 0, 58, 0, 18, 0, 57, 0, 15, 0, 54, 0, 11, 0, 56, 0, 14, 0 )
+nodes/fragment/connections = PoolIntArray( 6, 0, 0, 0, 2, 0, 8, 1, 9, 0, 11, 1, 12, 0, 14, 1, 17, 0, 15, 1, 20, 0, 18, 1, 22, 0, 21, 1, 25, 0, 24, 1, 28, 0, 27, 1, 31, 0, 30, 1, 34, 0, 33, 1, 37, 0, 36, 1, 40, 0, 39, 1, 43, 0, 42, 1, 46, 0, 45, 1, 49, 0, 48, 1, 8, 0, 51, 0, 11, 0, 51, 1, 14, 0, 51, 2, 15, 0, 51, 3, 18, 0, 51, 4, 21, 0, 51, 5, 24, 0, 51, 6, 27, 0, 51, 7, 30, 0, 51, 8, 33, 0, 51, 9, 36, 0, 51, 10, 39, 0, 51, 11, 42, 0, 51, 12, 45, 0, 51, 13, 48, 0, 51, 14, 51, 0, 6, 1, 51, 0, 0, 1, 52, 0, 8, 0, 70, 0, 48, 0, 69, 0, 45, 0, 68, 0, 42, 0, 66, 0, 39, 0, 67, 0, 36, 0, 65, 0, 33, 0, 64, 0, 30, 0, 62, 0, 27, 0, 61, 0, 24, 0, 60, 0, 21, 0, 58, 0, 18, 0, 57, 0, 15, 0, 54, 0, 11, 0, 56, 0, 14, 0, 3, 0, 6, 0 )
 
 [sub_resource type="ShaderMaterial" id=81]
 resource_local_to_scene = true
 shader = SubResource( 50 )
-shader_param/ColorUniform = Color( 1, 0, 0, 1 )
-shader_param/A = true
-shader_param/B = true
-shader_param/C = true
-shader_param/D = true
-shader_param/E = true
-shader_param/F = true
-shader_param/G1 = true
-shader_param/G2 = true
-shader_param/H = true
-shader_param/J = true
-shader_param/K = true
-shader_param/L = true
-shader_param/M = true
-shader_param/N = true
-shader_param/DP = true
+shader_param/on = Color( 0.878431, 0.0666667, 0.0666667, 1 )
+shader_param/A = false
+shader_param/B = false
+shader_param/C = false
+shader_param/D = false
+shader_param/E = false
+shader_param/F = false
+shader_param/G1 = false
+shader_param/G2 = false
+shader_param/H = false
+shader_param/J = false
+shader_param/K = false
+shader_param/L = false
+shader_param/M = false
+shader_param/N = false
+shader_param/DP = false
 
 [node name="LED1" type="Panel"]
 material = ExtResource( 16 )

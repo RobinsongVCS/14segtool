@@ -29,7 +29,7 @@ onready var leds = [led1,led2,led3,led4]
 
 func _ready():
 	OS.center_window()
-	get_tree().root.connect("size_changed", self, "_on_viewport_size_changed")
+	#get_tree().root.connect("size_changed", self, "_on_viewport_size_changed")
 	
 	bg_button_style.corner_radius_bottom_left = 2
 	bg_button_style.corner_radius_bottom_right = 2
@@ -66,7 +66,7 @@ func _ready():
 func _on_select_bg_pressed():
 	alert_container.visible = true
 	bg_dialog.visible = true
-	bg_dialog.rect_position = OS.window_size/2-bg_dialog.rect_size/4
+	bg_dialog.rect_position = Vector2(50,50)
 	bg_dialog.rect_scale = Vector2(.5,.5)
 	
 func _on_bg_color_changed(color):
@@ -83,7 +83,7 @@ func _on_bg_dialog_confirmed():
 func _on_select_off_pressed():
 	alert_container.visible = true
 	off_dialog.visible = true
-	off_dialog.rect_position = OS.window_size/2-off_dialog.rect_size/4
+	off_dialog.rect_position = Vector2(50,50)
 	off_dialog.rect_scale = Vector2(.5,.5)
 
 func _on_off_color_changed(color):
@@ -99,7 +99,7 @@ func _on_off_dialog_confirmed():
 func _on_select_on_pressed():
 	alert_container.visible = true
 	on_dialog.visible = true
-	on_dialog.rect_position = OS.window_size/2-on_dialog.rect_size/4
+	on_dialog.rect_position = Vector2(50,50)
 	on_dialog.rect_scale = Vector2(.5,.5)
 
 func _on_on_color_changed(color):
@@ -119,7 +119,4 @@ func update_colors():
 		led.on_color = on_color
 		led.update_colors()
 		
-func _on_viewport_size_changed():
-#	rect_size = OS.window_size
-#	rect_position = Vector2.ZERO
-	pass
+
